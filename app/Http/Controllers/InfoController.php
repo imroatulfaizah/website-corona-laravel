@@ -13,4 +13,11 @@ class InfoController extends Controller
     $data = $response->json();
     return view('index',compact('data'));
     }
+
+    public function positif()
+    {
+        $response = Http::get('https://api.kawalcorona.com/positif');
+        $data = $response->json();
+        return view('index',compact('data'));
+    }
 }
